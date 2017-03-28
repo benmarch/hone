@@ -1,0 +1,42 @@
+{
+  "name": "hone",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/hone.js",
+  "jsnext:main": "src/Hone.js",
+  "scripts": {
+    "build": "webpack -p",
+    "build-dev": "webpack -d --watch",
+    "test": "mocha --compilers js:babel-register test/setup/node.js test/unit/**/*.js",
+    "test:watch": "npm run test -- -w",
+    "build-browser-tests": "webpack -d --config webpack.tests.config.js",
+    "build-browser-tests:watch": "npm run build-browser-tests -- --watch",
+    "prepublish": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/benmarch/hone.git"
+  },
+  "keywords": [],
+  "author": "Ben March <bmarch89@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/benmarch/hone/issues"
+  },
+  "homepage": "https://github.com/benmarch/hone",
+  "devDependencies": {
+    "babel-core": "6.21.0",
+    "babel-loader": "6.2.10",
+    "babel-preset-es2015": "6.18.0",
+    "babel-register": "6.18.0",
+    "chai": "3.5.0",
+    "glob": "7.1.1",
+    "json-loader": "0.5.4",
+    "mocha": "3.2.0",
+    "sinon": "1.17.7",
+    "sinon-chai": "2.8.0",
+    "webpack": "2.2.0",
+    "webpack-node-externals": "1.5.4"
+  },
+  "dependencies": {}
+}

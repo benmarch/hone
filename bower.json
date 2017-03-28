@@ -1,0 +1,23 @@
+{
+  "name": "hone",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/hone.js",
+  "authors": [
+    "Ben March <bmarch89@gmail.com>"
+  ],
+  "license": "MIT",
+  "moduleType": [
+    "amd",
+    "globals",
+    "node"
+  ],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
