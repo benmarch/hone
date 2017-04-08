@@ -5,7 +5,7 @@ export default class BackdropSide extends BackdropComponent {
     constructor(options = {}) {
         super(options, document.createElement('div'));
 
-        addClass(this.element, `${this.options.classPrefix} ${this.options.classPrefix}-component ${this.options.classPrefix}-component-${options.name}`);
+        addClass(this.element, `hone-scope ${this.options.classPrefix} ${this.options.classPrefix}-component ${this.options.classPrefix}-component-${options.name}`);
         this.hide();
     }
 

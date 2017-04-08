@@ -13,7 +13,7 @@ export default class BackdropCorner extends BackdropComponent {
             </svg>
         </div>`));
 
-        addClass(this.element.querySelector('path'), `${this.options.classPrefix} ${this.options.classPrefix}-component ${this.options.classPrefix}-corner ${this.options.classPrefix}-corner-${options.name}`);
+        addClass(this.element.querySelector('path'), `hone-scope ${this.options.classPrefix} ${this.options.classPrefix}-component ${this.options.classPrefix}-corner ${this.options.classPrefix}-corner-${options.name}`);
         this.hide();
     }
 

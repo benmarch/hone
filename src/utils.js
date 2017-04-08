@@ -73,9 +73,9 @@ export function viewportOffset(el) {
 }
 
 export function createElement(html) {
-    const container = document.createElement('template');
+    const container = document.createElement('div');
     container.innerHTML = html.trim();
-    return container.content.firstChild;
+    return container.firstChild;
 }
 
 export function parsePadding(paddingString) {
@@ -172,5 +172,5 @@ export function scrollParents(node) {
     const allParents = parents(node.parentNode, []),
         scrollParents = allParents.filter(parent => scroll(parent));
 
-    return [document.body, ...scrollParents];
+    return [window, ...scrollParents];
 }
