@@ -1,6 +1,6 @@
 {
   "name": "hone",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "dist/hone.js",
   "jsnext:main": "src/Hone.js",
@@ -11,7 +11,8 @@
     "test:watch": "npm run test -- -w",
     "build-browser-tests": "webpack -d --config webpack.tests.config.js",
     "build-browser-tests:watch": "npm run build-browser-tests -- --watch",
-    "prepublish": "npm run build"
+    "prepublish": "npm run build",
+    "release": "release-it"
   },
   "repository": {
     "type": "git",
@@ -33,6 +34,7 @@
     "glob": "7.1.1",
     "json-loader": "0.5.4",
     "mocha": "3.2.0",
+    "release-it": "2.7.1",
     "sinon": "1.17.7",
     "sinon-chai": "2.8.0",
     "webpack": "2.2.0",
