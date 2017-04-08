@@ -7,8 +7,9 @@ module.exports = {
     output: {
         path: "./dist",
         filename: "[name].js",
-        library: 'hone',
-        libraryTarget: 'umd'
+        library: 'Hone',
+        libraryTarget: 'umd',
+        umdNamedDefine: true
     },
     externals: [nodeExternals()],
     module: {
