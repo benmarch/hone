@@ -20,7 +20,7 @@
     },
     "dist": {
         "repo": "https://github.com/benmarch/hone-bower.git",
-        "stageDir": ".stage",
+        "stageDir": "tmp",
         "baseDir": "dist",
         "files": ["**/*"],
         "pkgFiles": null,
