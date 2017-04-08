@@ -1,6 +1,6 @@
 {
   "name": "hone",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "",
   "main": "dist/hone.js",
   "jsnext:main": "src/Hone.js",
