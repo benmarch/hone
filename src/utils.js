@@ -12,8 +12,12 @@ export function addClass(el, className) {
     classes.filter(className => className.length).forEach(className => {
         if (el.classList) {
             el.classList.add(className);
-        } else {
-            el.className += ' ' + className;
+        } else {     
+            if (el.className.toString() === '[object SVGAnimatedString]') {
+                el.className.baseVal += (el.className.baseVal.length ? ' ' : '') + className;
+            } else {
+                el.className += (el.className.length ? ' ' : '') + className;
+            }
         }
     });
 }
@@ -24,7 +28,11 @@ export function removeClass(el, className) {
         if (el.classList) {
             el.classList.remove(className);
         } else {
-            el.className = el.className.replace(new RegExp('(^|\\b)' + className.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
+            if (el.className.toString() === '[object SVGAnimatedString]'){
+                el.className.baseVal = el.className.baseVal.toString().replace(new RegExp('(^|\s)' + className.split(' ').join('|') + '(\s|$)', 'gi'), ' ');
+            } else {
+                el.className = el.className.toString().replace(new RegExp('(^|\s)' + className.split(' ').join('|') + '(\s|$)', 'gi'), ' ');
+            }         
         }
     });
 }
@@ -157,7 +165,7 @@ export function scrollParents(node) {
     }
 
     function overflow(node) {
-        return style(node, "overflow") + style(node, "overflow-y") + style(node, "overflow-x");
+        return style(node, 'overflow') + style(node, 'overflow-y') + style(node, 'overflow-x');
     }
 
     function scroll(node) {
