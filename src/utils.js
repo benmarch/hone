@@ -14,9 +14,9 @@ export function addClass(el, className) {
             el.classList.add(className);
         } else {     
             if (el.className.toString() === '[object SVGAnimatedString]') {
-                el.className.baseVal += (el.className.baseVal.length ? " " : "") + className;
+                el.className.baseVal += (el.className.baseVal.length ? ' ' : '') + className;
             } else {
-                el.className += (el.className.length ? " " : "") + className;
+                el.className += (el.className.length ? ' ' : '') + className;
             }
         }
     });
@@ -29,9 +29,9 @@ export function removeClass(el, className) {
             el.classList.remove(className);
         } else {
             if (el.className.toString() === '[object SVGAnimatedString]'){
-                el.className.baseVal = el.className.baseVal.toString().replace(new RegExp("(^|\s)" + className.split(" ").join("|") + "(\s|$)", "gi"), " ");
+                el.className.baseVal = el.className.baseVal.toString().replace(new RegExp('(^|\s)' + className.split(' ').join('|') + '(\s|$)', 'gi'), ' ');
             } else {
-                el.className = el.className.toString().replace(new RegExp("(^|\s)" + className.split(" ").join("|") + "(\s|$)", "gi"), " ");
+                el.className = el.className.toString().replace(new RegExp('(^|\s)' + className.split(' ').join('|') + '(\s|$)', 'gi'), ' ');
             }         
         }
     });
@@ -165,7 +165,7 @@ export function scrollParents(node) {
     }
 
     function overflow(node) {
-        return style(node, "overflow") + style(node, "overflow-y") + style(node, "overflow-x");
+        return style(node, 'overflow') + style(node, 'overflow-y') + style(node, 'overflow-x');
     }
 
     function scroll(node) {
