@@ -3,12 +3,13 @@ import BackdropCorner from './BackdropCorner';
 import {Enum, offset, viewportOffset, parsePadding, scrollParents} from './utils';
 
 const defaultOptions = {
-    classPrefix: 'hone',    //all components are given style classes like "hone-component". This sets the prefix
-    fixed: false,           //set to true if the element is position: fixed
-    borderRadius: 0,        //creates rounded corners (all four or nothing)
-    enabled: true,          //controls the visibility and event listeners
-    padding: '0',           //adds padding around the target. Same format as CSS padding rule
-    fullScreen: false       //should the backdrop be full screen (for a modal window)
+    classPrefix: 'hone',            //all components are given style classes like "hone-component". This sets the prefix
+    fixed: false,                   //set to true if the element is position: fixed
+    borderRadius: 0,                //creates rounded corners (all four or nothing)
+    enabled: true,                  //controls the visibility and event listeners
+    padding: '0',                   //adds padding around the target. Same format as CSS padding rule
+    fullScreen: false,              //should the backdrop be full screen (for a modal window)
+    disableOptimizations: false     //should the positioning optimizations be disabled (fixes positioning issues in SPAs when true)
 };
 
 //must be called in context of a hone
@@ -141,7 +142,7 @@ export default class Hone {
             offset.height += padding.top + padding.bottom;
         }
 
-        if (this.lastOffset &&
+        if (this.lastOffset && !this.options.disableOptimizations &&
             offset.top === this.lastOffset.top &&
             offset.left === this.lastOffset.left &&
             offset.width === this.lastOffset.width &&
